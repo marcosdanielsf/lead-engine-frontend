@@ -1,5 +1,3 @@
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,84 +9,224 @@
 }
 
 @layer base {
-  .theme {
-    --font-heading: var(--font-sans);
-    --font-sans: var(--font-sans);
-  }
+  /* Light mode — kept as fallback but app runs dark */
   :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --background: #ffffff;
+    --foreground: #0f1011;
+    --card: #f8f9fa;
+    --card-foreground: #0f1011;
+    --popover: #ffffff;
+    --popover-foreground: #0f1011;
+    --primary: #5e6ad2;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f2f4;
+    --secondary-foreground: #0f1011;
+    --muted: #f1f2f4;
+    --muted-foreground: #8a8f98;
+    --accent: #5e6ad2;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --border: rgba(0, 0, 0, 0.10);
+    --input: rgba(0, 0, 0, 0.08);
+    --ring: #5e6ad2;
+    --radius: 0.5rem;
   }
+
+  /* Dark mode — Linear Design System palette */
   .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    /* Backgrounds */
+    --background: #0f1011;
+    --foreground: #f7f8f8;
+
+    /* Cards / Surfaces */
+    --card: rgba(255, 255, 255, 0.03);
+    --card-foreground: #f7f8f8;
+
+    /* Popovers / Dropdowns */
+    --popover: #161718;
+    --popover-foreground: #f7f8f8;
+
+    /* Brand Accent */
+    --primary: #5e6ad2;
+    --primary-foreground: #ffffff;
+
+    /* Secondary surfaces */
+    --secondary: rgba(255, 255, 255, 0.05);
+    --secondary-foreground: #d0d6e0;
+
+    /* Muted / metadata */
+    --muted: rgba(255, 255, 255, 0.04);
+    --muted-foreground: #8a8f98;
+
+    /* Accent */
+    --accent: rgba(94, 106, 210, 0.15);
+    --accent-foreground: #7170ff;
+
+    /* Destructive */
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    /* Borders */
+    --border: rgba(255, 255, 255, 0.08);
+    --input: rgba(255, 255, 255, 0.06);
+
+    /* Focus ring */
+    --ring: #5e6ad2;
+
+    /* Charts */
+    --chart-1: #5e6ad2;
+    --chart-2: #10b981;
+    --chart-3: #f59e0b;
+    --chart-4: #8b5cf6;
+    --chart-5: #ef4444;
   }
-  * {
-    @apply border-border outline-ring/50;
+
+  /* Linear Extended Color Tokens */
+  :root {
+    --color-text-primary: #f7f8f8;
+    --color-text-secondary: #d0d6e0;
+    --color-text-tertiary: #8a8f98;
+    --color-text-quaternary: #62666d;
+    --color-accent-purple: #5e6ad2;
+    --color-accent-purple-hover: #828fff;
+    --color-accent-interactive: #7170ff;
+    --color-success: #10b981;
+    --color-success-dim: rgba(16, 185, 129, 0.15);
+    --color-warning: #f59e0b;
+    --color-warning-dim: rgba(245, 158, 11, 0.15);
+    --color-error: #ef4444;
+    --color-error-dim: rgba(239, 68, 68, 0.15);
+    --color-surface: rgba(255, 255, 255, 0.03);
+    --color-surface-raised: rgba(255, 255, 255, 0.05);
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-subtle: rgba(255, 255, 255, 0.05);
+    --color-page-bg: #0f1011;
+    --color-panel-bg: #161718;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
-    @apply font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv01', 'ss03';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  /* Global dark baseline overrides */
+  .dark body {
+    background-color: #0f1011;
+    color: #f7f8f8;
+  }
+
+  /* Scrollbar */
+  .dark ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.20);
+  }
+}
+
+/* Typography scale utilities */
+@layer utilities {
+  .text-display {
+    font-size: 48px;
+    font-weight: 510;
+    letter-spacing: -1.056px;
+    color: #f7f8f8;
+  }
+  .text-heading {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.704px;
+    color: #f7f8f8;
+  }
+  .text-primary-linear {
+    color: #f7f8f8;
+  }
+  .text-secondary-linear {
+    color: #d0d6e0;
+  }
+  .text-tertiary-linear {
+    color: #8a8f98;
+  }
+  .text-quaternary-linear {
+    color: #62666d;
+  }
+
+  /* Card surface */
+  .card-surface {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
+  .card-surface-raised {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
+
+  /* Status badge utilities for dark mode */
+  .badge-success {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+  .badge-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+  }
+  .badge-error {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+  }
+  .badge-info {
+    background: rgba(94, 106, 210, 0.15);
+    color: #818cf8;
+    border: 1px solid rgba(94, 106, 210, 0.25);
+  }
+  .badge-neutral {
+    background: rgba(255, 255, 255, 0.06);
+    color: #d0d6e0;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+  }
+  .badge-purple {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+  }
+  .badge-pink {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+    border: 1px solid rgba(236, 72, 153, 0.25);
+  }
+  .badge-cyan {
+    background: rgba(6, 182, 212, 0.15);
+    color: #22d3ee;
+    border: 1px solid rgba(6, 182, 212, 0.25);
+  }
+  .badge-amber {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fcd34d;
+    border: 1px solid rgba(245, 158, 11, 0.20);
+  }
+  .badge-orange {
+    background: rgba(249, 115, 22, 0.15);
+    color: #fb923c;
+    border: 1px solid rgba(249, 115, 22, 0.25);
   }
 }
